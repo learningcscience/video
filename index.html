@@ -1,0 +1,796 @@
+<!doctype html>
+ <html>
+	<head>
+	      <meta charset="utf-8">
+		<link rel="icon"  href="image/logo.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	      <title>vidplay</title>
+	</head>
+	<style>
+	@import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap');
+	body{
+	box-sizing:border-box;
+	background-color:#a52a2a52;
+	animation-name:style;
+	animation-duration:.7s;
+	}
+	@media only screen and (max-width: 450px) {
+  		body{
+		margin:0;
+		cursor:pointer;
+		}
+	*{
+	box-sizing:border:box;
+	}
+	 .col-s-1{width:8.33%}
+ 	 .col-s-2 {width: 16.66%;}
+  	 .col-s-3 {width: 25%;}
+ 	 .col-s-4 {width: 33.33%;}
+ 	 .col-s-5 {width: 41.66%;}
+ 	 .col-s-6 {width: 50%;}
+	 .col-s-7 {width: 58.33%;}
+ 	 .col-s-8 {width: 66.66%;}
+ 	 .col-s-9 {width: 75%;}
+	 .col-s-10 {width: 83.33%;}
+ 	 .col-s-11 {width: 91.66%;}
+ 	 .col-s-12 {width: 100%;}
+	
+	.settinglogo img{
+	width:40px;
+	}
+	.playlist{
+	display:none;
+	}
+	.nav{
+	background-color:white;
+	border-bottom:2px solid white;
+	margin:0;
+	padding:0;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	}
+	.brandlogo img{
+	width:120px;
+	}
+	.some h2{
+	padding-top:0;
+	margin:0;
+	padding-left:70px;
+	padding-right:70px;
+	}
+	.some h4{
+	padding-left:70px;
+	padding-right:70px;
+	padding-top:8px;
+	padding-bottom:8px;
+	}
+	.some{
+	border:1px solid white;
+	font-family: 'Style Script', cursive;
+	font-size:20px;
+	display:none;
+	animation-name:style;
+	animation-duration:.7s;
+	margin-top:60px;
+	float:right;
+	background-color:white;
+	z-index:1;
+	}
+	.joinlist{
+	display:flex;
+	}
+	.noseen{
+	width:100%;
+	position:fixed;
+	top:56%;
+	left:0;
+	margin:0px;
+	}
+	.photo img{
+	padding-left:20px;
+	}
+	.just{
+	position:fixed;
+	top:100px;
+	left:5%;
+	}
+	.just img{
+	border-radius:50%;
+	margin-left:50px;
+ 	}
+	.just img:hover{
+	    box-shadow: 8px 12px #88888869;
+	    cursor:pointer;
+	}
+	.photo{
+	text-align:center;
+	}
+	.playlist{
+	z-index:1;
+	}
+	.modal{
+	width:100%;
+	}
+	.low{
+	margin-left:20%;
+	margin-right:20%;
+	margin-top:50%;
+	}
+	.low h2{
+	background-color:white;
+	text-align: center;
+	margin-bottom:30%;
+	}
+	.low h2:hover{
+	background-color:black;
+	color:white;
+	}
+	
+	}
+	
+	.nav{
+	display:flex;
+	justify-content:space-between;
+	}
+	.nav .settinglogo img{
+	border-radius:50%;
+	width:50px;
+	}
+	.settinglogo{
+	padding-right:7%;
+	padding-top:1%;
+	}
+	.brandlogo{
+	padding-right:7%;
+	padding-top:1%;
+	}
+	.brandlogo img{
+	
+	}
+
+
+	.seen{
+	text-align:center;
+	margin-top:70px;
+	margin-left:430px;
+	margin-right:186px;
+	margin-top:0;
+	border:none;
+	}
+	
+
+	
+	
+	
+	
+	.some h4:hover{
+	background-color:#000000bd;
+	color:white;
+	cursor:pointer;
+	}
+	
+	
+	.modal{
+
+		position:absolute;
+		top: 0;
+		left: 0;
+		width:100%;
+		height: 100%;
+		font-family: 'Style Script', cursive;
+		font-size:20px;
+		background-color: rgba(0,0,0,0.7);
+		color:black;
+		display:none;
+		animation-name:style;
+		animation-duration:.7s;
+		position: fiexd;
+		
+		}
+  		@keyframes style{
+			0%{
+			opacity:0;
+			transform: rotateX(90deg);
+			}
+			100%{
+			opacity:1;
+			transform: rotateY(360deg);
+			}
+		}
+		
+
+	.modal span.close{
+	float:right;
+	font-size:35px;
+	padding-left:5px;
+	padding-right:5px;
+	padding-top:0px;
+	color:#00000094;
+	background: black;
+	padding: 10px 20px;
+	color: white;
+	font-size: 30px;
+	cursor: pointer;
+	}
+	.playlist{
+	
+	height:550px;
+	border:none;
+	width:350px;
+	background-color:#8c8383;
+	color:white;
+	animation-name:side;
+	animation-duration:.7s;
+	overflow:hidden;
+	overflow:scroll;
+	overflow: auto;
+	
+	}
+	.playlist  img{
+	margin-left:20px;
+	margin-bottom: 9px;
+	border-radius:15px;
+	margin-top:40px;
+	}
+	.back{
+	position:absolute;
+	font-size:20px;
+	padding:10px;
+	padding-left:12px;
+	padding-right:12px;
+	background-color:#00000042;
+	color:white;
+	top:48%;
+	left:300px;
+	border-radius:50%;
+	cursor:pointer;
+	position:fixed;
+	
+	}
+	.joker{
+	display:flex;
+	border-radius:20%;
+	}
+	.playlist p{
+	margin-top:40px;
+	font-family: 'Roboto', sans-serif;
+	margin-left:4px;
+	}
+	.image{
+	width:100%;
+	display:flex;
+	margin-top:20px;
+	border-left:none;
+	border-top:none;
+	border-radius: 40px;
+	 box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+	
+	}
+	.image:hover{
+	  box-shadow: -20px 16px 16px 0 rgb(0 0 0 / 20%);
+	  transition:0.5s;
+	border-bottom:1px solid black;
+	}
+	.footer{
+	background-color:green;
+	margin:0;
+	padding-bottom:10px;
+	
+	}
+	.footer p{
+	text-align:center;
+	padding-top:25px;
+	
+	}
+	@keyframes side{
+			0%{
+			opacity:0;
+			left:0;
+			}
+			100%{
+			opacity:1;
+			left:8.5px;
+			}
+			
+		}
+		.aalu {
+   			 position: absolute;
+   			top: 4px;
+   			 left: 343px;
+			}	
+
+
+
+
+
+
+	
+	
+	@media only screen and (min-width: 768px) {
+	  .col-m-1 {width: 8.33%;}
+	  .col-m-2 {width: 16.66%;}
+	  .col-m-3 {width: 25%;}
+	  .col-m-4 {width: 33.33%;}
+	  .col-m-5 {width: 41.66%;}
+	  .col-m-6 {width: 50%;}
+	  .col-m-7 {width: 58.33%;}
+	  .col-m-8 {width: 66.66%;}
+	  .col-m-9 {width: 75%;}
+	  .col-m-10 {width: 83.33%;}
+	  .col-m-11 {width: 91.66%;}
+	  .col-m-12 {width: 100%;}
+	.noseen{
+	position:fixed;
+	left:25.5%;
+	top:11.5%;
+	right:20%;
+	}
+	
+	.brandlogo{
+	margin-left:5%;
+	padding-bottom:5px;
+	
+	}
+	body{
+	margin:0;
+	}
+	.nav{
+	background-color:white;
+	}
+	.just{
+	display:none;
+	}
+	
+	.photo{
+	text-align:center;
+	}
+	
+	.some h4:hover{
+	background-color:#000000bd;
+	color:white;
+	cursor:pointer;
+	}
+	
+
+	.some{
+	border:1px solid white;
+	font-family: 'Style Script', cursive;
+	font-size:20px;
+	display:none;
+	animation-name:style;
+	animation-duration:.7s;
+	float:right;
+	background-color:white;
+	z-index:1;
+	}
+	
+	.modal{
+
+		position:absolute;
+		top: 0;
+		left: 0;
+		width:100%;
+		height: 100%;
+		font-family: 'Style Script', cursive;
+		font-size:20px;
+		background-color: rgba(0,0,0,0.7);
+		color:black;
+		display:none;
+		animation-name:style;
+		animation-duration:.7s;
+		position: fiexd;
+		
+		}
+  		@keyframes style{
+			0%{
+			opacity:0;
+			transform: rotateX(90deg);
+			}
+			100%{
+			opacity:1;
+			transform: rotateY(360deg);
+			}
+		}
+		.low{
+		display:flex;
+		align-items:center;
+		justify-content:space-between;
+		padding:50px;
+		margin-top:150px;
+		}
+		.low h2{
+		background-color:white;
+		padding-left:100px;
+		padding-right:100px;
+		}
+		.low h2:hover{
+			background-color:black;
+			color:white;
+		}
+	.modal span.close{
+	float:right;
+	font-size:35px;
+	padding-left:5px;
+	padding-right:5px;
+	padding-top:0px;
+	color:#00000094;
+	background: black;
+	padding: 10px 20px;
+	color: white;
+	font-size: 30px;
+	cursor: pointer;
+	}
+	.playlist{
+	height:550px;
+	border:none;
+	width:350px;
+	background-color:#8c8383;
+	color:white;
+	animation-name:side;
+	animation-duration:.7s;
+	overflow:hidden;
+	overflow:scroll;
+	overflow: auto;
+	
+	
+	}
+	.playlist  img{
+	margin-left:20px;
+	margin-bottom: 9px;
+	border-radius:15px;
+	margin-top:40px;
+	}
+	.back{
+	position:absolute;
+	font-size:20px;
+	padding:10px;
+	padding-left:12px;
+	padding-right:12px;
+	background-color:#00000042;
+	color:white;
+	top:48%;
+	left:300px;
+	border-radius:50%;
+	cursor:pointer;
+	position:fixed;
+	
+	}
+	.joker{
+	display:flex;
+	border-radius:20%;
+	}
+	.playlist p{
+	margin-top:40px;
+	font-family: 'Roboto', sans-serif;
+	margin-left:4px;
+	}
+	.image{
+	width:100%;
+	display:flex;
+	margin-top:20px;
+	border-left:none;
+	border-top:none;
+	border-radius: 40px;
+	 box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+	
+	}
+	.image:hover{
+	  box-shadow: -20px 16px 16px 0 rgb(0 0 0 / 20%);
+	  transition:0.5s;
+	border-bottom:1px solid black;
+	}
+	.footer{
+	background-color:green;
+	margin:0;
+	padding-bottom:10px;
+	
+	}
+	.footer p{
+	text-align:center;
+	padding-top:25px;
+	
+	}
+	@keyframes side{
+			0%{
+			opacity:0;
+			left:0;
+			}
+			100%{
+			opacity:1;
+			left:8.5px;
+			}
+			
+		}
+		.aalu {
+   			 position: absolute;
+   			top: 4px;
+   			 left: 343px;
+			}	
+		.some h2{
+	padding-top:25px;
+	padding-bottom:25px;
+	background-color:black;
+	color:white;
+	margin:0;
+	padding-left:91px;
+	padding-right:91px;
+	}
+	.some h4{
+	padding-left:91px;
+	font-size:25px;
+	padding-right:91px;
+	padding-top:18px;
+	padding-bottom:7px;
+	}
+	.looter{
+	color:black;
+	background-color:green;
+	}
+	}
+
+		
+
+
+
+
+
+
+	
+	
+
+	
+	</style>
+	<body>
+	<div class="nav">
+		<div class="brandlogo">
+			<img src="image/top.png"  width="150px">
+		</div>
+
+		<div class="settinglogo">
+
+			<img src="image/set.jpg"width="55px" onclick="view()">
+		
+		</div>
+	
+	</div>
+
+
+
+	<div class="joinlist">
+	
+		<div class="playlist" id ="halfmodal" >
+			<div class="mistake" >
+			<span  class="back " id="back" onclick="backlist()">&times</span>
+			<span class="image"onclick="playvideo(2)">
+			<img src="image/freefire.png"height="80px" >	
+			<p>offical video garena freefire by  manoj dk with op one tap</p><br>
+			</span>
+			<span class="image"onclick="playvideo(3)">
+			<img src="image/god.png"height="80px"  >
+			<p>bhajan of shree ram owor anyaa bhagawan sae parathana video ,dekna na bhuleyaa</p><br>
+			</span>
+			<span class="image"onclick="playvideo(4)">
+			<img src="image/rise.png"height="80px"  >
+			<p>new  rise up song in english with lyrics for making your mind fresh it give u a confident</p><br>
+			</span>
+			<span class="image"onclick="playvideo(1)">
+			<img src="image/pani.png"height="80px"   >
+			<p>new romantic hindi full video song pani pani of badsha don the jhon</p><br>
+			</span>
+			<span class="image" onclick="playvideo(0)">
+			<img src="image/idiot.png"height="80px" >
+			<p>new 3idiot full movie song bheate hawa hope you like it<p><br>
+			</span>
+			</div>
+			<div class="footer">
+			<p>&copy; All Reserved vidplay 2021</p>	
+			</div>
+			
+		</div>
+
+		<div class="some" id="setti">
+			<h2>Setting</h1>
+
+		
+			<h4 onclick="main()">Sound rate</h4>
+			<h4  onclick="full()">Full screen </h4>
+			<h4 onclick="list()">Play list</h4>
+
+		</div>
+	</div>
+
+		<div class="just">
+		<img src="image/like.jpg" width="230px" id ="round">
+		</div>
+		
+
+		  <div class="noseen">
+			
+		
+	     	<video id="song" width="100%" loop>
+			  <source id="videocont" src="video/fat.webm" type="video/webm">
+		
+		</video>
+		<div class="photo">
+		<img src="image/next.png"height="40px" id="arko" >
+		<img src="image/play.png"height="54px" id="start" onclick="play()" >
+		<img src="image/pre.png"height="40px" id="pailako">
+	</div>
+	</div>
+		<div class="modal" id="modalcon">
+			<span  class="close " id="close" onclick="closed()">&times</span>
+			<div class="low">
+ 			<h2 onclick="slow()">Slow</h2>
+			<h2 onclick="normal()">Normal</h2>
+			<h2 onclick="fast()">Fast</h2>
+		</div>
+	
+	</div>
+	
+			
+	
+	
+	<script>
+
+		let videos = ["video/behti.webm","video/badsha.webm","video/ff.mp4","video/god.webm","video/fat.webm" ];
+
+		function playvideo(index){
+
+		   let v=document.getElementById("song");
+		  let m=document.getElementById("halfmodal");
+		  m.style.display="none";
+		   let source=document.getElementById("videocont");
+			source.src= videos[index];
+		
+			v.load();
+			v.play();
+  			let b=document.getElementById("start");
+			let c=document.getElementById("round");
+			b.src="image/pause.png";
+  			c.src="image/imagine.gif";
+  
+		}
+		
+		 
+		
+		var screen= document.getElementById("song");
+		function full(){
+			 if (screen.requestFullscreen) {
+    				screen.requestFullscreen();
+				
+	
+ 			 } else if (screen.webkitRequestFullscreen) { 
+    				screen.webkitRequestFullscreen();
+			
+			  } else if (screen.msRequestFullscreen) { 
+   				 screen.msRequestFullscreen();
+			
+			  }
+		}
+		let vi=document.getElementById("song");
+			function slow(){
+				vi.playbackRate=0.7;
+			}
+			function normal(){
+				vi.playbackRate=1;
+			}
+			function fast(){
+			vi.playbackRate=2;	
+			}
+		let modal=document.getElementById("modalcon");
+
+		function main(){
+			modal.style.display = "block";
+			let x= document.getElementById("setti");
+			x.style.display = "none";	
+		}
+		function closed(){
+			modal.style.display="none";
+		}
+
+
+
+		let video=["video/fat.webm" ,"video/behti.webm","video/badsha.webm","video/ff.mp4","video/god.webm"];
+		let vidindex=0;
+		let b=document.getElementById("icon");
+		document.getElementById("arko").addEventListener("click", function(){
+		vidindex+=1;
+		if(vidindex>=video.length){
+		vidindex=0;
+		}
+		let v=document.getElementById("song");
+		let source=document.getElementById("videocont");
+		source.src=video[vidindex];
+		
+		v.load();
+		v.play();
+		let b=document.getElementById("start");
+		let c=document.getElementById("round");
+		b.src="image/pause.png";
+		c.src="image/imagine.gif";
+			});
+		
+		
+
+
+		document.getElementById("pailako").addEventListener("click", function(){
+		vidindex-=1;
+		if(vidindex<0){
+		vidindex=video.length-1;
+		}
+		let v=document.getElementById("song");
+		let source=document.getElementById("videocont");
+		source.src=video[vidindex];
+		
+		v.load();
+		v.play();
+		let b=document.getElementById("start");
+		let c=document.getElementById("round");
+		b.src="image/pause.png";
+		c.src="image/imagine.gif";
+			});
+	
+	function play (){
+
+
+		let a=document.getElementById("song");
+		let b=document.getElementById("start");
+		let c=document.getElementById("round");
+		if(a.paused){
+			a.play();
+			b.src="image/pause.png";
+			c.src="image/imagine.gif";
+		}
+		else{
+			a.pause();
+			b.src="image/play.png";	
+			c.src="image/like.jpg";
+		}
+		
+		
+	}
+	function view(){
+
+	let x= document.getElementById("setti");
+	let m=document.getElementById("halfmodal");
+	m.style.display="none";
+	if(x.style.display === "block"){
+		x.style.display = "none";
+	}
+	
+	else{
+		x.style.display = "block";
+	}
+	}
+	
+	function list(){
+		let m=document.getElementById("halfmodal");
+		let n=document.getElementById("setti");
+		if(m.style.display=="block"){
+			m.style.display="none";
+			n.style.display="none";
+		}		
+		else{
+		m.style.display="block";
+		n.style.display="none";
+		}
+		
+	}
+	function backlist(){
+		let m=document.getElementById("halfmodal");
+		m.style.display="none";
+	}
+	
+
+	
+		
+	</script>
+	
+	
+	</body>
+ </html>
